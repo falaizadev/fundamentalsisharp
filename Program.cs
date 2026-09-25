@@ -137,16 +137,13 @@ Console.WriteLine("============================");
 Console.WriteLine("=======Aplikasi Kasir=======");
 
 Console.WriteLine("============================");
-
 Console.WriteLine("Inputan");
 
 Console.WriteLine("Nama Barang : ");
-String namabarang2 = Console.ReadLine();
-
+string namabarang2 = Console.ReadLine() ?? "";
 
 Console.WriteLine("Harga : ");
 decimal hargabarang2 = decimal.Parse(Console.ReadLine() ?? "0");
-
 
 Console.WriteLine("Jumlah : ");
 decimal jumlahbarang2 = decimal.Parse(Console.ReadLine() ?? "0");
@@ -156,11 +153,16 @@ decimal uangpembayaran2 = decimal.Parse(Console.ReadLine() ?? "0");
 
 decimal totalbarang2 = hargabarang2 * jumlahbarang2;
 
-if(hargabarang2 <= 0)
+if (hargabarang2 > 0 && jumlahbarang2 >0 && uangpembayaran2 >= totalbarang2)
 {
-    Console.WriteLine("Harga Tidak Valid!");
+    decimal kembalianbarang2 = uangpembayaran2 - totalbarang2;
+    Console.WriteLine("Harga & Jumlah Barang Valid!");
+    Console.WriteLine("Transaksi Berhasil!");
+    Console.WriteLine("Kembalian : " + kembalianbarang2);
 }
 else
 {
-    Console.WriteLine("Harga Tidak Valid!");
+    Console.WriteLine("Harga & Jumlah Barang Tidak Valid!");
+    Console.WriteLine("Transaksi Gagal!");
 }
+
