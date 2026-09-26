@@ -28,14 +28,12 @@ else
 Console.WriteLine("==============================");
 
 Console.WriteLine("Masukkan Nama : ");
-// Menggunakan ?? "" untuk mencegah warning CS8600 (kemungkinan null)
 string nama = Console.ReadLine() ?? "";
 
 Console.WriteLine("Masukkan Nama Barang : ");
 string nama_barang = Console.ReadLine() ?? "";
 
 Console.WriteLine("Masukkan Harga Barang : ");
-// Menggunakan ?? "0" untuk mencegah warning CS8604
 int harga_barang = int.Parse(Console.ReadLine() ?? "0");
 
 Console.WriteLine("Masukkan Jumlah Barang : ");
@@ -60,7 +58,7 @@ else
 Console.WriteLine("=========================");
 
 decimal hargaaBarang = 12000;
-int jumlahhBarang = 3; 
+int jumlahhBarang = 3;
 decimal uanggPelanggan = 50000;
 
 
@@ -101,8 +99,8 @@ else
 }
 
 Console.WriteLine("=====");
-Console.WriteLine("\tNama Barang\t==" +aname);
-Console.WriteLine("\tSub Total\t==" +subtotal);
+Console.WriteLine("\tNama Barang\t==" + aname);
+Console.WriteLine("\tSub Total\t==" + subtotal);
 Console.WriteLine("\tKembalian\t==" + change);
 
 Console.WriteLine("==============================");
@@ -114,7 +112,7 @@ Console.WriteLine("Harga : ");
 decimal jenis_harga = decimal.Parse(Console.ReadLine() ?? "0");
 
 Console.WriteLine("Jumlah : ");
-int jenis_jumlah = int.Parse(Console.ReadLine () ?? "");
+int jenis_jumlah = int.Parse(Console.ReadLine() ?? "");
 
 Console.WriteLine("Uang Pelanggan : ");
 decimal jenis_usermoney = decimal.Parse(Console.ReadLine() ?? "0");
@@ -153,7 +151,7 @@ decimal uangpembayaran2 = decimal.Parse(Console.ReadLine() ?? "0");
 
 decimal totalbarang2 = hargabarang2 * jumlahbarang2;
 
-if (hargabarang2 > 0 && jumlahbarang2 >0 && uangpembayaran2 >= totalbarang2)
+if (hargabarang2 > 0 && jumlahbarang2 > 0 && uangpembayaran2 >= totalbarang2)
 {
     decimal kembalianbarang2 = uangpembayaran2 - totalbarang2;
     Console.WriteLine("Harga & Jumlah Barang Valid!");
@@ -166,3 +164,56 @@ else
     Console.WriteLine("Transaksi Gagal!");
 }
 
+
+Console.WriteLine("================================");
+
+Console.WriteLine("Toko Kasir");
+Console.WriteLine("Nama Barang : ");
+String namabarang3 = Console.ReadLine() ?? "";
+
+Console.WriteLine("Harga Barang : ");
+decimal hargabarang3 = decimal.Parse(Console.ReadLine() ?? "0");
+
+Console.WriteLine("Jumlah Barang : ");
+decimal jumlahbarang3 = decimal.Parse(Console.ReadLine() ?? "0");
+
+Console.WriteLine("Uang Pembayaran : ");
+decimal uangpembayaran3 = decimal.Parse(Console.ReadLine() ?? "0");
+
+decimal totalbarang3 = hargabarang3 * jumlahbarang3;
+
+if (hargabarang3 <= 0)
+{
+    Console.WriteLine("Harga Tidak Valid!");
+}
+else if (jumlahbarang3 <= 0)
+{
+    Console.WriteLine("Jumlah Tidak Valid!");
+}
+
+else if (uangpembayaran3 < totalbarang3)
+{
+    Console.WriteLine("Uang Pembayaran Tidak Cukup!");
+}
+else
+{
+    decimal kembalianbarang3 = uangpembayaran3 - totalbarang3;
+    Console.WriteLine("Transaksi Berhasil!");
+    Console.WriteLine("Total Barang Keseluruhan : " + totalbarang3);
+    Console.WriteLine("Kembalian : " + kembalianbarang3);
+}
+
+Console.WriteLine("===============================");
+
+decimal jumlah34;
+Console.WriteLine("Masukkan Nilai Harga : ");
+String hargacatcherror = Console.ReadLine() ?? "0";
+
+if (decimal.TryParse(hargacatcherror, out jumlah34 ))
+{
+    Console.WriteLine("Harga Valid!");
+}
+else
+{
+    Console.WriteLine("Masukkan Harga Berupa Angka!");
+}
