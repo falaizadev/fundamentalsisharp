@@ -205,15 +205,68 @@ else
 
 Console.WriteLine("===============================");
 
-decimal jumlah34;
+decimal harga34;
 Console.WriteLine("Masukkan Nilai Harga : ");
-String hargacatcherror = Console.ReadLine() ?? "0";
+string hargacatcherror = Console.ReadLine() ?? "0";
 
-if (decimal.TryParse(hargacatcherror, out jumlah34 ))
+if (!decimal.TryParse(hargacatcherror, out harga34))
 {
-    Console.WriteLine("Harga Valid!");
+    Console.WriteLine("Masukkan Harga Berupa Angka!");
+}
+else if (harga34 <= 0)
+{
+    Console.WriteLine("Harga Tidak Valid!");
 }
 else
 {
-    Console.WriteLine("Masukkan Harga Berupa Angka!");
+    Console.WriteLine("Harga Valid!");
+}
+
+decimal jumlah34;
+Console.WriteLine("Masukkan Jumlah Barang : ");
+string jumlahcatcherror = Console.ReadLine() ?? "0";
+
+if (!decimal.TryParse(jumlahcatcherror, out jumlah34))
+{
+    Console.WriteLine("Masukkan Jumlah Berupa Angka!");
+}
+else if (jumlah34 <= 0)
+{
+    Console.WriteLine("Jumlah Tidak Valid!");
+}
+else
+{
+    Console.WriteLine("Jumlah Valid!");
+}
+
+decimal total34 = harga34 * jumlah34;
+
+decimal up34;
+Console.WriteLine("Masukkan Uang Pembayaran : ");
+string upcatcherror = Console.ReadLine() ?? "0";
+
+if (!decimal.TryParse(upcatcherror, out up34))
+{
+    Console.WriteLine("Masukkan Uang Pembayaran Berupa Angka!");
+}
+else if (up34 < total34)
+{
+    Console.WriteLine("Uang Pembayaran Kurang!");
+}
+else
+{
+    Console.WriteLine("Uang Pembayaran Valid!");
+}
+
+if (harga34 > 0 && jumlah34 > 0 && up34 >= total34)
+{
+    decimal kembalian34 = up34 - total34;
+
+    Console.WriteLine("Total : " + total34);
+    Console.WriteLine("Transaksi Berhasil!");
+    Console.WriteLine("Kembalian : " + kembalian34);
+}
+else
+{
+    Console.WriteLine("Transaksi Gagal!");
 }
