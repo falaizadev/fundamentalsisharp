@@ -335,3 +335,49 @@ while (kesempatan > 0)
     }
 
 }
+
+Console.WriteLine("==============================");
+
+Console.WriteLine("=== SISTEM KASIR ===");
+
+Console.Write("Nama Barang : ");
+string namaBarang23 = Console.ReadLine() ?? "";
+
+Console.Write("Harga Barang : ");
+decimal harga23 = decimal.Parse(Console.ReadLine() ?? "0");
+
+Console.Write("Jumlah Barang : ");
+int jumlah23 = int.Parse(Console.ReadLine() ?? "0");
+
+decimal subtotal23 = harga23 * jumlah23;
+
+Console.WriteLine("Subtotal : " + subtotal23);
+
+Console.Write("Uang Pembayaran : ");
+decimal pembayaran23 = decimal.Parse(Console.ReadLine() ?? "0");
+
+if (harga23 <= 0)
+{
+    Console.WriteLine("Harga tidak valid!");
+}
+else if (jumlah23 <= 0)
+{
+    Console.WriteLine("Jumlah tidak valid!");
+}
+else if (pembayaran23 < subtotal23)
+{
+    Console.WriteLine("Uang pembayaran tidak cukup!");
+}
+else
+{
+    decimal kembalian23 = pembayaran23 - subtotal23;
+
+    Console.WriteLine("=== TRANSAKSI ===");
+    Console.WriteLine("Barang     : " + namaBarang23);
+    Console.WriteLine("Harga      : " + harga23);
+    Console.WriteLine("Jumlah     : " + jumlah23);
+    Console.WriteLine("Subtotal   : " + subtotal23);
+    Console.WriteLine("Pembayaran : " + pembayaran23);
+    Console.WriteLine("Kembalian  : " + kembalian23);
+    Console.WriteLine("Transaksi berhasil!");
+}
