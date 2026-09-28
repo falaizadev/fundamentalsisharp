@@ -270,3 +270,23 @@ else
 {
     Console.WriteLine("Transaksi Gagal!");
 }
+
+Console.WriteLine("Masukkan Angka : ");
+String angka1 = Console.ReadLine() ?? "0";
+int angka2;
+if(int.TryParse(angka1, out angka2))
+{
+    Console.WriteLine("Masukkan Angka Yang Sesuai!");
+}
+else 
+{
+    Console.WriteLine("Apa ya!");
+}
+
+int angka = 1;
+
+while (angka <= 5)
+{
+    Console.WriteLine(angka);
+
+    angka++;
