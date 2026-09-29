@@ -381,3 +381,113 @@ else
     Console.WriteLine("Kembalian  : " + kembalian23);
     Console.WriteLine("Transaksi berhasil!");
 }
+
+Console.WriteLine("====================================================");
+
+int kesempatan4 = 10;
+while (kesempatan4 > 0)
+{
+
+
+    Console.WriteLine("Nama Barang : ");
+    String inputsbarang = Console.ReadLine() ?? "";
+
+    Console.WriteLine("Harga Barang : ");
+    String hargaBarangtryparse = Console.ReadLine() ?? "0";
+    decimal hargaBarang4;
+
+    if (!decimal.TryParse(hargaBarangtryparse, out hargaBarang4))
+    {
+
+        Console.WriteLine("Masukkan Harga Dengan Benar!");
+        kesempatan4--;
+        continue;
+    }
+
+    if (hargaBarang4 > 0)
+    { 
+    }
+    else
+    {
+        Console.WriteLine(" ");
+        kesempatan4--;
+        continue;
+    }
+
+
+
+    Console.WriteLine("Jumlah Barang : ");
+    String jumlahBarangtryparse = Console.ReadLine() ?? "0";
+    decimal jumlahBarang4;
+
+    if (!decimal.TryParse(jumlahBarangtryparse, out jumlahBarang4))
+    {
+        Console.WriteLine("Masukkan Jumlah Dengan Benar!");
+        kesempatan4--;
+        continue;
+    }
+
+
+    if (jumlahBarang4 > 0)
+    { 
+    }
+    else
+    {
+        Console.WriteLine(" ");
+        kesempatan4--;
+        continue;
+    }
+
+    decimal jumlahTotal4 = hargaBarang4 * jumlahBarang4;
+    Console.WriteLine("Total : " + jumlahTotal4);
+
+    break;
+}
+
+Console.WriteLine("=====================================");
+
+
+for (int i =1; i <= 10; i++)
+{
+    Console.WriteLine(i);
+}
+
+for(int a = 10; a>=1; a--)
+{
+    Console.WriteLine(a);
+}
+
+for(int u = 2; u <= 20; u+=2)
+{
+    Console.WriteLine(u);
+}
+
+int totalFor = 0;
+
+for (int aa = 1; aa<=10; aa++)
+{
+    totalFor += aa;
+    Console.WriteLine(aa);
+}
+Console.WriteLine("Total : " + totalFor);
+
+for(int p = 1; p<=10; p++)
+{
+    int y = 5;
+    int perkalian = p * y;
+    Console.WriteLine(p + "x" +  y  +": " + perkalian);
+}
+
+
+decimal tttl = 0;
+
+for (int brg = 1; brg<=5; brg++)
+{
+    decimal hrg = 10000;
+    decimal jml = 2;
+    decimal sbttl = hrg * jml;
+    tttl += sbttl;
+
+    Console.WriteLine("Barang "+brg + "-" + "subtotal : "+sbttl );
+}
+Console.WriteLine("Total Semua Barang : " + tttl);
