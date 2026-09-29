@@ -495,3 +495,4 @@ Console.WriteLine("Total Semua Barang : " + tttl);
 Console.WriteLine("===========================================");
 Console.WriteLine("PPCPPCPPPCPCPCP");
 Console.WriteLine("OFFOFOOFOFOFOOOF");
+Console.WriteLine("KFKFKFKFKFKFKFKFKFKFK");
