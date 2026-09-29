@@ -491,3 +491,5 @@ for (int brg = 1; brg<=5; brg++)
     Console.WriteLine("Barang "+brg + "-" + "subtotal : "+sbttl );
 }
 Console.WriteLine("Total Semua Barang : " + tttl);
+
+Console.WriteLine("===========================================");
