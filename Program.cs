@@ -493,3 +493,4 @@ for (int brg = 1; brg<=5; brg++)
 Console.WriteLine("Total Semua Barang : " + tttl);
 
 Console.WriteLine("===========================================");
+Console.WriteLine("PPCPPCPPPCPCPCP");
