@@ -484,7 +484,7 @@ decimal tttl = 0;
 for (int brg = 1; brg<=5; brg++)
 {
     decimal hrg = 10000;
-    decimal jml = 2;
+    int jml = 2;
     decimal sbttl = hrg * jml;
     tttl += sbttl;
 
@@ -492,7 +492,57 @@ for (int brg = 1; brg<=5; brg++)
 }
 Console.WriteLine("Total Semua Barang : " + tttl);
 
-Console.WriteLine("===========================================");
-Console.WriteLine("PPCPPCPPPCPCPCP");
-Console.WriteLine("OFFOFOOFOFOFOOOF");
-Console.WriteLine("KFKFKFKFKFKFKFKFKFKFK");
+Console.WriteLine("============================================");
+
+int angkadw = 1;
+do
+{
+    Console.WriteLine("Masukkan Angka : "+angkadw);
+    angkadw++;
+}
+while (angkadw <= 5);
+
+
+int cekbrgdw = 1;
+
+do
+{
+    Console.WriteLine("Cek Barang ke -" + cekbrgdw);
+    cekbrgdw++;
+} while (cekbrgdw <= 5);
+
+decimal hrgdw;
+do
+{
+
+
+    Console.WriteLine("Masukkan Harga : ");
+    hrgdw = int.Parse(Console.ReadLine() ?? "0");
+
+    if (hrgdw <= 0)
+    {
+        Console.WriteLine("Harga Tidak Valid!");
+    }
+    else
+    {
+        Console.WriteLine("Harga Valid");
+    }
+
+} while (hrgdw > 0);
+
+int jmlhdw;
+
+do
+{
+    Console.WriteLine("Masukkan Jumlah : ");
+    jmlhdw = int.Parse(Console.ReadLine() ?? "0");
+
+    if (jmlhdw <= 0)
+    {
+        Console.WriteLine("Jumlah Tidak Valid!");
+    }
+    else
+    {
+        Console.WriteLine("Jumlah Valid!");
+    }
+} while (jmlhdw <= 0);
