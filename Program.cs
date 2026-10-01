@@ -839,7 +839,7 @@ do
 
     if (tthbd >= 100000)
     {
-        nilaiDiskon = tthbd * diskon;
+        nilaiDiskon = tthbd - diskon;
         ttlhbd = tthbd * nilaiDiskon;
 
         Console.WriteLine("Dapat Diskon 10%");
