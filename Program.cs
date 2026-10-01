@@ -546,3 +546,345 @@ do
         Console.WriteLine("Jumlah Valid!");
     }
 } while (jmlhdw <= 0);
+
+int stok;
+
+do
+{
+    Console.WriteLine("Masukkan Jumlah Stok : ");
+    stok = int.Parse(Console.ReadLine() ?? "0");
+
+    if (stok < 0)
+    {
+        Console.WriteLine("Stok Tidak Valid!");
+    }
+    else if (stok == 0)
+    {
+        Console.WriteLine("Stok Habis!");
+    }
+    else
+    {
+        Console.WriteLine("Stok Tersedia");
+    }
+   
+
+
+}while (stok < 0) ;
+
+
+decimal hrg1 = 0;
+
+int jm1 =0 ;
+
+do
+{
+    Console.WriteLine("Masukkan Harga Barang : ");
+    String hrgbarangdw =Console.ReadLine() ?? "0";
+
+    if(!decimal.TryParse(hrgbarangdw, out hrg1))
+    {
+        Console.WriteLine("Masukkan Angka!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Valid!");
+       
+    }
+
+    Console.WriteLine("Masukkan Jumlah Barang : ");
+    String jmlbarangdw =Console.ReadLine() ?? "0";
+
+    if (!int.TryParse(jmlbarangdw, out jm1))
+    {
+        Console.WriteLine("Masukkan Angka!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Valid!");
+       
+    }
+
+    if (hrg1 <=0 )
+    { 
+        Console.WriteLine("Harga Tidak Valid!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Harga Valid!");
+    }
+
+    if(jm1 <=0)
+    {
+        Console.WriteLine("Jumlah Tidak Valid!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Jumlah Valid!");
+    }
+    
+
+
+
+} while ( hrg1 <=0 || jm1 <= 0 );
+
+
+decimal tlbarangdw = hrg1 * jm1;
+Console.WriteLine("Total : " + tlbarangdw);
+
+Console.WriteLine("================================================");
+
+String namall;
+decimal hrgll = 0;
+int stkll = 0;
+
+
+do
+{
+
+
+    Console.WriteLine("Nama Barang : ");
+    namall = Console.ReadLine() ?? "";
+
+    Console.WriteLine("Harga Barang : ");
+    String hrop = Console.ReadLine() ?? "0";
+
+    if (!decimal.TryParse(hrop, out hrgll))
+    {
+        Console.WriteLine("Masukkan Angka!!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Lanjut");
+    }
+
+    Console.WriteLine("Jumlah Stok : ");
+    String jmsk = Console.ReadLine() ?? "0";
+
+    if (!int.TryParse(jmsk, out stkll))
+    {
+        Console.WriteLine("Masukkan Angka!!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Lanjut");
+    }
+
+    if (hrgll <= 0)
+    {
+        Console.WriteLine("Masukkan Harga Yang Sesuai!");
+        continue;
+    }
+    else
+    {
+        Console.WriteLine("Lanjut");
+    }
+
+    if (stkll < 0)
+    {
+        Console.WriteLine("Masukkan Stok Yang Benar!");
+        continue;
+    }
+    else if (stkll == 0)
+    {
+        Console.WriteLine("Stok Habis!");
+    }
+    else
+    {
+        Console.WriteLine("Stok Tersedia!");
+    }
+
+} while (hrgll <= 0 || stkll < 0);
+
+Console.WriteLine("Nama Barang : " + namall);
+Console.WriteLine("Harga : " + hrgll);
+Console.WriteLine("Stok : " + stkll);
+
+Console.WriteLine("============================");
+
+String nmb1;
+decimal hgb1 = 0;
+int jmb1 = 0;
+decimal upp1 = 0;
+decimal ttl11 = 0;
+
+
+
+do
+{
+
+
+    Console.WriteLine("Nama Barang : ");
+    nmb1 = Console.ReadLine() ?? "";
+
+    Console.WriteLine("Harga Barang ; ");
+    String hggb1 = Console.ReadLine() ?? "0";
+
+    if (!decimal.TryParse(hggb1, out hgb1))
+    {
+        Console.WriteLine("Masukkan Sesuai Angka!");
+        continue;
+    }
+
+
+
+    if (hgb1 <= 0)
+    {
+        Console.WriteLine("Masih Belum Valid!");
+        continue;
+    }
+
+
+
+    Console.WriteLine("Jumlah Barang : ");
+    String jmmb1 = Console.ReadLine() ?? "0";
+
+    if (!int.TryParse(jmmb1, out jmb1))
+    {
+        Console.WriteLine("Masukkan Sesuai Angka");
+        continue;
+    }
+
+
+    if (jmb1 <= 0)
+    {
+        Console.WriteLine("Masih Belum Valid!");
+        continue;
+    }
+
+
+
+    ttl11 = hgb1 * jmb1;
+
+
+    Console.WriteLine("Uang Pembayaran : ");
+    String umpp1 = Console.ReadLine() ?? "0";
+
+    if (!decimal.TryParse(umpp1, out upp1))
+    {
+        Console.WriteLine("Masih Belum Sesuai!");
+        continue;
+    }
+
+
+
+
+} while (upp1 < ttl11);
+
+Console.WriteLine("Total : " + ttl11);
+decimal kb11 = upp1 - ttl11;
+
+Console.WriteLine("Kembalian : " + kb11);
+Console.WriteLine("Transaksi Selesai");
+
+Console.WriteLine("=====================================");
+
+String nmbd;
+decimal hbrbd = 0;
+int jmhbd = 0;
+decimal upbd = 0;
+decimal tthbd = 0;
+decimal diskon = 0.10m;
+decimal nilaiDiskon = 0;
+decimal ttlhbd = 0;
+decimal ckmbhd = 0;
+
+do
+{
+
+
+    Console.WriteLine("Nama Barang : ");
+    nmbd = Console.ReadLine() ?? "";
+
+    Console.WriteLine("Harga Barang : ");
+    String hbbrbd = Console.ReadLine() ?? "0";
+
+    if (!decimal.TryParse(hbbrbd, out hbrbd))
+    {
+        Console.WriteLine("Masukkan Angka!");
+        continue;
+    }
+
+
+    if (hbrbd <= 0)
+    {
+        Console.WriteLine("Masukkan Harga!");
+        continue;
+    }
+
+    Console.WriteLine("Jumlah Barang : ");
+    String jmmhbd = Console.ReadLine() ?? "0";
+
+
+    if (!int.TryParse(jmmhbd, out jmhbd))
+    {
+        Console.WriteLine("Masukkan Angka!");
+        continue;
+    }
+
+
+    if (jmhbd <= 0)
+    {
+        Console.WriteLine("Masukkan Harga!");
+        continue;
+    }
+
+
+    tthbd = hbrbd * jmhbd;
+
+    if (tthbd >= 100000)
+    {
+        nilaiDiskon = tthbd * diskon;
+        ttlhbd = tthbd * nilaiDiskon;
+
+        Console.WriteLine("Dapat Diskon 10%");
+
+    }
+    else
+    {
+        nilaiDiskon = 0;
+        ttlhbd = tthbd;
+        Console.WriteLine("Tidak Dapat Diskon!");
+    }
+
+    Console.WriteLine("Total Awal : " + tthbd);
+    Console.WriteLine("Nilai Diskon : " + nilaiDiskon);
+    Console.WriteLine("Total Bayar : " + ttlhbd);
+
+    Console.WriteLine("Uang Pembayaran : ");
+    String uupbd = Console.ReadLine() ?? "0";
+
+     if (!decimal.TryParse(uupbd, out upbd))
+    {
+        Console.WriteLine("Masukkan Angka!");
+        continue;
+    }
+
+    if (upbd <= 0)
+    {
+        Console.WriteLine("Masukkan Harga!");
+        continue;
+    }
+
+     
+
+
+
+    ckmbhd = upbd - ttlhbd;
+    
+} while (upbd < ttlhbd);
+
+Console.WriteLine("Nama Barang : " + nmbd);
+Console.WriteLine("Harga : "+hbrbd);
+Console.WriteLine("Jumlah : " + jmhbd);
+Console.WriteLine("Total Awal : "+tthbd);
+Console.WriteLine("Diskon : " + nilaiDiskon);
+Console.WriteLine("Total Bayar : "+ttlhbd);
+Console.WriteLine("Uang Pembayaran : " + upbd);
+Console.WriteLine("Kembalian :" + ckmbhd);
+Console.WriteLine("Transaksi Berhasil!");
