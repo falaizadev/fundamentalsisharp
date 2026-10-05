@@ -796,8 +796,6 @@ decimal ckmbhd = 0;
 
 do
 {
-
-
     Console.WriteLine("Nama Barang : ");
     nmbd = Console.ReadLine() ?? "";
 
@@ -806,49 +804,44 @@ do
 
     if (!decimal.TryParse(hbbrbd, out hbrbd))
     {
-        Console.WriteLine("Masukkan Angka!");
+        Console.WriteLine("Masukkan Harga Berupa Angka!");
         continue;
     }
 
-
     if (hbrbd <= 0)
     {
-        Console.WriteLine("Masukkan Harga!");
+        Console.WriteLine("Harga Tidak Valid!");
         continue;
     }
 
     Console.WriteLine("Jumlah Barang : ");
     String jmmhbd = Console.ReadLine() ?? "0";
 
-
     if (!int.TryParse(jmmhbd, out jmhbd))
     {
-        Console.WriteLine("Masukkan Angka!");
+        Console.WriteLine("Masukkan Jumlah Berupa Angka!");
         continue;
     }
-
 
     if (jmhbd <= 0)
     {
-        Console.WriteLine("Masukkan Harga!");
+        Console.WriteLine("Jumlah Tidak Valid!");
         continue;
     }
-
-
     tthbd = hbrbd * jmhbd;
 
     if (tthbd >= 100000)
     {
         nilaiDiskon = tthbd * diskon;
-        ttlhbd = tthbd * nilaiDiskon;
+        ttlhbd = tthbd - nilaiDiskon;
 
-        Console.WriteLine("Dapat Diskon 10%");
-
+        Console.WriteLine("Dapat Diskon 10%!");
     }
     else
     {
         nilaiDiskon = 0;
         ttlhbd = tthbd;
+
         Console.WriteLine("Tidak Dapat Diskon!");
     }
 
@@ -859,32 +852,131 @@ do
     Console.WriteLine("Uang Pembayaran : ");
     String uupbd = Console.ReadLine() ?? "0";
 
-     if (!decimal.TryParse(uupbd, out upbd))
+    if (!decimal.TryParse(uupbd, out upbd))
     {
-        Console.WriteLine("Masukkan Angka!");
+        Console.WriteLine("Masukkan Uang Pembayaran Berupa Angka!");
         continue;
     }
 
     if (upbd <= 0)
     {
-        Console.WriteLine("Masukkan Harga!");
+        Console.WriteLine("Uang Pembayaran Tidak Valid!");
         continue;
     }
 
-     
-
-
+    if (upbd < ttlhbd)
+    {
+        Console.WriteLine("Uang Pembayaran Tidak Cukup!");
+        continue;
+    }
 
     ckmbhd = upbd - ttlhbd;
-    
+
 } while (upbd < ttlhbd);
 
+Console.WriteLine();
+Console.WriteLine("=== TRANSAKSI ===");
 Console.WriteLine("Nama Barang : " + nmbd);
-Console.WriteLine("Harga : "+hbrbd);
+Console.WriteLine("Harga : " + hbrbd);
 Console.WriteLine("Jumlah : " + jmhbd);
-Console.WriteLine("Total Awal : "+tthbd);
+Console.WriteLine("Total Awal : " + tthbd);
 Console.WriteLine("Diskon : " + nilaiDiskon);
-Console.WriteLine("Total Bayar : "+ttlhbd);
+Console.WriteLine("Total Bayar : " + ttlhbd);
 Console.WriteLine("Uang Pembayaran : " + upbd);
-Console.WriteLine("Kembalian :" + ckmbhd);
+Console.WriteLine("Kembalian : " + ckmbhd);
 Console.WriteLine("Transaksi Berhasil!");
+
+
+Console.WriteLine("===========================");
+
+String[] gharray =
+{
+    "pensil",
+    "penghapus",
+    "penggaris",
+    "tipex"
+};
+
+for(int iaray=0; iaray < gharray.Length; iaray++)
+{
+    Console.WriteLine(gharray[iaray]);
+}
+
+Console.WriteLine("=============================");
+
+String [] namabarangArray = new string[4];
+
+for (int waray = 0; waray < namabarangArray.Length; waray++)
+{
+    Console.WriteLine("Masukkan Barang ke-"+(waray+1)+" : ");
+    namabarangArray[waray] = Console.ReadLine() ?? "";
+
+}
+
+for (int ui = 0; ui < namabarangArray.Length; ui++)
+{
+    Console.WriteLine(namabarangArray[ui]);
+}
+
+Console.WriteLine("================================");
+
+int[] hrgarray = new int[5];
+decimal totalarrrtt = 0;
+
+for (int hrgusrarray = 0; hrgusrarray < hrgarray.Length; hrgusrarray++)
+{
+    Console.WriteLine("Masukkan 5 Harga Barang : ");
+    hrgarray[hrgusrarray] = int.Parse(Console.ReadLine() ?? "0");
+
+    if (hrgarray[hrgusrarray] <= 0)
+    {
+        Console.WriteLine("ODOD");
+        continue;
+    }
+}
+
+for( int jaja = 0; jaja < hrgarray.Length; jaja++)
+{
+
+    Console.WriteLine(hrgarray[jaja]);
+    decimal totalhararray = totalarrrtt + hrgarray[jaja];
+    Console.WriteLine("Total Harga: " + totalhararray);
+}
+
+Console.WriteLine("===================================");
+
+int[] hrgarray2 = new int[5];
+decimal totalarrrtt2 = 0;
+
+for (int hrgusrarray2 = 0; hrgusrarray2 < hrgarray2.Length; hrgusrarray2++)
+{
+    Console.Write("Masukkan Harga Barang ke-" + (hrgusrarray2 + 1) + " : ");
+    string inputHarga = Console.ReadLine() ?? "";
+
+    if (!int.TryParse(inputHarga, out int hargasdf))
+    {
+        Console.WriteLine("Input harus berupa angka!");
+        hrgusrarray2--;
+        continue;
+    }
+
+    if (harga <= 0)
+    {
+        Console.WriteLine("Harga harus lebih dari 0!");
+        hrgusrarray2--;
+        continue;
+    }
+
+    hrgarray2[hrgusrarray2] = hargasdf;
+}
+
+Console.WriteLine("\nDaftar Harga:");
+
+for (int jaja2 = 0; jaja2 < hrgarray2.Length; jaja2++)
+{
+    Console.WriteLine(hrgarray2[jaja2]);
+
+    totalarrrtt2 = totalarrrtt2 + hrgarray2[jaja2];
+}
+
+Console.WriteLine("Total Harga: " + totalarrrtt2);
