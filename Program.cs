@@ -945,6 +945,7 @@ for( int jaja = 0; jaja < hrgarray.Length; jaja++)
 
 Console.WriteLine("===================================");
 
+
 int[] hrgarray2 = new int[5];
 decimal totalarrrtt2 = 0;
 
