@@ -835,6 +835,12 @@ do
         nilaiDiskon = tthbd * diskon;
         ttlhbd = tthbd - nilaiDiskon;
 
+        nilaiDiskon = tthbd - diskon;
+        ttlhbd = tthbd * nilaiDiskon;
+
+        Console.WriteLine("Dapat Diskon 10%");
+
+
         Console.WriteLine("Dapat Diskon 10%!");
     }
     else
