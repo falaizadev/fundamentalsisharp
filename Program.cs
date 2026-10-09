@@ -987,3 +987,46 @@ for (int jaja2 = 0; jaja2 < hrgarray2.Length; jaja2++)
 }
 
 Console.WriteLine("Total Harga: " + totalarrrtt2);
+
+decimal[] bhr = new decimal[6];
+decimal harggterbbsr = 0;
+decimal harggterkcll = 0;
+
+for (int bhhr = 0; bhhr < bhr.Length; bhhr++)
+{
+    Console.WriteLine("Masukkan Harga Barang");
+    String inpttbhr = Console.ReadLine() ?? "0";
+
+    if (!decimal.TryParse(inpttbhr, out decimal inputybhr))
+    {
+        Console.WriteLine("Input Harus Berupa Angka!!");
+        bhhr--;
+        continue;
+    }
+    if(inputybhr <= 0)
+    {
+        Console.WriteLine("Harga Harus Lebih Dari Nol!");
+        bhhr--;
+        continue;
+    }
+    bhr[bhhr] = inputybhr;
+
+}
+harggterbbsr = bhr[0];
+harggterkcll = bhr[0];
+for (int hrgtkcbl = 0; hrgtkcbl < bhr.Length; hrgtkcbl++)
+{
+    if (bhr[hrgtkcbl] > harggterbbsr)
+    {
+        harggterbbsr = bhr[hrgtkcbl];
+    }
+    if (bhr[hrgtkcbl] < harggterkcll)
+    {
+        harggterkcll = bhr[hrgtkcbl];
+    }
+}
+Console.WriteLine("Harga Terbesar : "   + harggterbbsr);
+
+
+Console.WriteLine("Harga Terkecil : " + harggterkcll);
+
