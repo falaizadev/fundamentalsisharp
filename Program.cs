@@ -991,6 +991,8 @@ Console.WriteLine("Total Harga: " + totalarrrtt2);
 decimal[] bhr = new decimal[6];
 decimal harggterbbsr = 0;
 decimal harggterkcll = 0;
+decimal harggtotll = 0;
+decimal harggrattt = 0;
 
 for (int bhhr = 0; bhhr < bhr.Length; bhhr++)
 {
@@ -1014,19 +1016,17 @@ for (int bhhr = 0; bhhr < bhr.Length; bhhr++)
 }
 harggterbbsr = bhr[0];
 harggterkcll = bhr[0];
-for (int hrgtkcbl = 0; hrgtkcbl < bhr.Length; hrgtkcbl++)
+harggtotll = 0;
+harggrattt = bhr[0];
+
+for (int harggttlrattt = 0; harggttlrattt < bhr.Length; harggttlrattt++)
 {
-    if (bhr[hrgtkcbl] > harggterbbsr)
-    {
-        harggterbbsr = bhr[hrgtkcbl];
-    }
-    if (bhr[hrgtkcbl] < harggterkcll)
-    {
-        harggterkcll = bhr[hrgtkcbl];
-    }
+    harggtotll = harggtotll + bhr[harggttlrattt];
 }
-Console.WriteLine("Harga Terbesar : "   + harggterbbsr);
 
+harggrattt = harggtotll / bhr.Length;
 
+Console.WriteLine("Harga Terbesar : " + harggterbbsr);
 Console.WriteLine("Harga Terkecil : " + harggterkcll);
-
+Console.WriteLine("Total Harga : " + harggtotll);
+Console.WriteLine("Rata-Rata Harga : " + harggrattt);
